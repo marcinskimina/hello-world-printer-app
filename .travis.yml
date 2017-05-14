@@ -10,3 +10,7 @@ script:
 after_success:
   - make docker_build
   - PASSWORD=$DOCKER_PASSWOD make docker_push
+deploy:
+  provider: heroku
+  app: fathomless-lowlands-30515
+  api_key: $Heroku_key
